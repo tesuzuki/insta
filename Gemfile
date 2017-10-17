@@ -45,13 +45,17 @@ group :development, :test do
   gem 'better_errors'
    gem 'letter_opener_web'
   
-
-
-
-end
+gem 'devise'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'sass-rails','~> 5.0'
 gem 'honoka-rails'
-gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'mini_magick'
+end
+
