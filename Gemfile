@@ -41,7 +41,15 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'pry-rails'
+  gem 'better_errors'
+   gem 'letter_opener_web'
   
 gem 'devise'
+
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+gem 'sass-rails','~> 5.0'
+gem 'honoka-rails'
 end
 

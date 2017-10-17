@@ -1,2 +1,16 @@
-<h1>Pictures#edit</h1>
-<p>Find me in app/views/pictures/edit.html.erb</p>
+<div class="container">
+<div class="row">
+      <div class="col-lg-6">
+        <div class="well bs-component">
+<fieldset>
+              <legend>投稿編集画面</legend>
+              <%= form_for(@picture, url: choose_new_or_edit) do |f| %>
+              <%= image_tag picture_path(@picture), class: "middle-img" %>
+  <div class="form-group">
+  <%= f.file_field :file,accept: "image/jpeg"  %>
+  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <%= f.submit "アップロードする" ,class: "btn btn-primary" %>
+</div>
+</fieldset>
+</div></div></div></div>
+<% end %>

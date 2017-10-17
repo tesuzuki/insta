@@ -1,2 +1,15 @@
-<h1>Pictures#new</h1>
-<p>Find me in app/views/pictures/new.html.erb</p>
+<div class="container">
+<div class="row">
+      <div class="col-lg-6">
+        <div class="well bs-component">
+<fieldset>
+              <legend>画像投稿画面</legend>
+              <%= form_for(@picture) do |f| %>
+  <div class="form-group">
+  <%= f.file_field :file,accept: "image/jpeg"  %>
+  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <%= f.submit "アップロードする" ,class: "btn btn-primary" %>
+</div>
+</fieldset>
+</div></div></div></div>
+<% end %>
