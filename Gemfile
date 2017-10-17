@@ -45,11 +45,13 @@ group :development, :test do
   gem 'better_errors'
    gem 'letter_opener_web'
   
-gem 'devise'
+
+
+
+end
 
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'sass-rails','~> 5.0'
 gem 'honoka-rails'
-end
-
+gem 'devise'
