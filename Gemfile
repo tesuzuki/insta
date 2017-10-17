@@ -58,4 +58,6 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'rails_12factor', group: :production
+
 
