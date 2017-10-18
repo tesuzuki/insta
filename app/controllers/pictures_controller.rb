@@ -15,8 +15,10 @@ class PicturesController < ApplicationController
     if upload_file != nil 
       picture[:filename] = upload_file.original_filename
       picture[:file] = upload_file.read
-      picture[:user_id] = picture_params[:user_id]
-    end 
+    end
+    
+    picture[:user_id] = picture_params[:user_id]
+    picture[:content] = picture_params[:content]
     @picture = Picture.new(picture)
     if @picture.save
       flash[:success] = "画像を保存しました。"
@@ -38,6 +40,7 @@ class PicturesController < ApplicationController
       picture[:filename] = upload_file.original_filename
       picture[:file] = upload_file.read
     end 
+    picture[:content] = picture_params[:content]
     @picture.update(picture)
     redirect_to pictures_path
   end
@@ -60,7 +63,7 @@ class PicturesController < ApplicationController
 
     def picture_params
       params.require(:picture).permit(
-        :filename,:file, :user_id
+        :filename,:file, :user_id, :content
       )   
     end
 end

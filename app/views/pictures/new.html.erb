@@ -1,15 +1,23 @@
 <div class="container">
-<div class="row">
-      <div class="col-lg-6">
-        <div class="well bs-component">
-<fieldset>
-              <legend>画像投稿画面</legend>
-              <%= form_for(@picture) do |f| %>
-  <div class="form-group">
-  <%= f.file_field :file,accept: "image/jpeg"  %>
-  <%= f.hidden_field :user_id, :value => current_user.id%>
-  <%= f.submit "アップロードする" ,class: "btn btn-primary" %>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="well bs-component">
+                <fieldset>
+                    <legend>画像投稿画面</legend>
+                        <%= form_for(@picture) do |f| %>
+                        <div class="form-group">
+                            <%= f.file_field :file,accept: "image/jpeg"  %>
+                        </div>
+                        <%= f.hidden_field :user_id, :value => current_user.id%>
+                        <div class="form-group">
+                            <div class="col-lg-10">
+                                <%= f.text_field :content , class: "form-control" , id: "textArea" %> 
+                            </div>
+                        </div>
+                        <%= f.submit "アップロードする" ,class: "btn btn-primary" %>
+                        <% end %>
+                </fieldset>
+            </div>
+        </div>
+    </div>
 </div>
-</fieldset>
-</div></div></div></div>
-<% end %>
