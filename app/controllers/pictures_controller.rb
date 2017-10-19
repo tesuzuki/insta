@@ -16,15 +16,14 @@ class PicturesController < ApplicationController
       picture[:filename] = upload_file.original_filename
       picture[:file] = upload_file.read
     end
-    
-    picture[:user_id] = picture_params[:user_id]
+        picture[:user_id] = picture_params[:user_id]
     picture[:content] = picture_params[:content]
     @picture = Picture.new(picture)
     if @picture.save
-      flash[:success] = "画像を保存しました。"
-      redirect_to pictures_path
+      redirect_to pictures_path, notice: "投稿しました。"
     else
       flash[:error] = "保存できませんでした。"
+      render 'new'
     end
   end
 

@@ -1,12 +1,23 @@
-<div class="container">
     <div class="row">
         <div class="col-lg-6">
             <div class="well bs-component">
                 <fieldset>
                     <legend>画像投稿画面</legend>
                         <%= form_for(@picture) do |f| %>
+                        
+                            <% if @picture.errors.any? %>
+                                <div id="error_explanation">
+                                    <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
+                                    <ul>
+                                        <% @picture.errors.full_messages.each do |msg| %>
+                                            <li><%= msg %></li>
+                                        <% end %>
+                                    </ul>
+                                </div>
+                            <% end %>
+                            
                         <div class="form-group">
-                            <%= f.file_field :file,accept: "image/jpeg"  %>
+                            <%= f.file_field :file,accept: "image/jpeg" %>
                         </div>
                         <%= f.hidden_field :user_id, :value => current_user.id%>
                         <div class="form-group">
@@ -20,4 +31,3 @@
             </div>
         </div>
     </div>
-</div>
